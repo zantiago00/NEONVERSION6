@@ -267,12 +267,11 @@ function startGame() {
     container.classList.remove('hit', 'shake'); // Resetear clases del contenedor
 
     updateUI();
-    clearScheduled spawns(); // Limpiar timeouts anteriores
-
+    clearScheduledSpawns(); // Limpiar timeouts anteriores // <--- CORREGIDO
     // Programar generación inicial
     scheduleNextObstacle();
     scheduleNextCoin();
-
+    
     // Iniciar bucle de juego
     if (gameLoopId) cancelAnimationFrame(gameLoopId);
     gameLoopId = requestAnimationFrame(updateGame);
